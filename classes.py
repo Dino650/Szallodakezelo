@@ -6,9 +6,6 @@ class Room(ABC):
     price=None
     number=None
     Type=None
-    @abstractmethod
-    def __init__(self, number):
-        pass
     
     @abstractmethod
     def __str__(self):
@@ -51,9 +48,26 @@ class Hotel():
     def list_rooms(self):
         text=""
         for room in self.roomlist:
-            text+=f"{room.number} {room.Type}"
+            text+=f"{room.number} {room.Type}\n"
         return text
-
+    def __str__(self):
+        return self.name
+class Booking():
+    
+    def __init__(self,name, hotel_name, room, date):
+        self.costumer_name=name
+        self.hotel_name=hotel_name
+        self.room=room
+        self.date=date
+    def remove(self):
+        del self
+        
+    
+    
+    
+        
+        
+        
 
     
 
